@@ -1,0 +1,329 @@
+/* font-family: 'Nova Square', cursive;
+font-family: 'Rajdhani', sans-serif; */
+/* Color: darkred, #C67F7F, #ececec */
+/* Setup */
+:root{
+    --dred: darkred;
+    --rose: #c67f7f;
+    --wh: #ececec;
+}
+h1, h2, .h1, .h2 {
+    font-family:'Nova Square', cursive;
+    color: var(--dred);
+}
+p, a, h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+}
+.bg-wh{
+    background-color: var(--wh);
+}
+.bg-dred{
+    background-color: var(--dred);
+}
+.t-dred{
+    color: var(--dred);
+}
+.t-wh{
+    color: var(--wh);
+}
+/* Fine setup */
+
+/* Navbar */
+.logo{
+    height: 60px;
+    width: 130px;
+    display: block;
+    margin: 0px auto;
+}
+.nav-link{
+    font-weight: 600;
+    font-size: 14px;
+}
+.nav-wrapper{
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#navbar{
+    transition: 0.4s;
+}
+
+/* End Navbar */
+
+/* Header */
+.header{
+    background: linear-gradient(to bottom, rgba(236,236,236,1), rgba(236, 236, 236, 0.7)25%,  rgb(198, 127, 127, 0.3)), url(./media/header.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 110vh;
+}
+
+.title{
+    letter-spacing: 20px;
+    font-size: 50px;
+    animation-name: appear;
+    animation-duration: 1.5s;
+}
+
+@media screen and (min-width: 576px) {
+    .title{
+        letter-spacing: 50px;
+        font-size: 80px;
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        color: var(--dred);
+    }
+}
+
+.img-header-bottom{
+    bottom: 0px;
+    width: 100%;
+}
+/* End Header */
+
+/* Citazione */
+.quotes{
+    position: relative;
+    font-size: 25px;
+    font-style: italic;
+    color: gray;
+}
+
+.quotes::before {
+    content: open-quote;
+    position: absolute;
+    color: var(--dred);
+    font-weight: 800;
+    font-style: italic;
+    font-size: 60px;
+    top: -20px;
+    left: -20px;
+}
+
+.quotes::after {
+    content: close-quote;
+    position: absolute;
+    color: var(--dred);
+    font-weight: 800;
+    font-style: italic;
+    font-size: 60px;
+    bottom: -50px;
+    right: 0px;
+}
+
+.btn-circle-custom{
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    border-radius: 50px;
+    border: 2px solid var(--dred);
+    background: var(--rose);
+    color: var(--dred);
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.btn-circle-custom:hover{
+    background: var(--wh);
+    transform: scale(1.1);
+}
+/* End Citazione */
+
+/* Card con icone */
+.icon-card{
+    background-color: transparent;
+    border: none;
+    border-bottom: 4px solid var(--dred);
+    position: relative;
+    min-width: 50%;
+    transition: 0.4s;
+}
+
+@media screen and (min-width: 992px) {
+    .icon-card{
+        min-width: 100%;
+    }
+}
+
+.icon-card::after{
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--dred);
+    background-color: white;
+    border-radius: 50%;
+    bottom: -12px;
+    right: calc(50% - 10px);
+}
+
+.icon-card:hover p{
+    color: var(--dred);
+}
+
+.icon-card:hover i{
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+    0%{
+        color: var(--dred);
+    }
+    50%{
+        color: var(--rose);
+        transform: scale(1.2);
+    }
+    100%{
+        color: var(--dred);
+    }
+    
+}
+
+/* End Cards con icone */
+
+/* Paragrafi + button */
+.bg-wh-trees{
+    background:url(./media/trees2.png), var(--wh);
+    background-repeat: no-repeat;
+    background-origin: padding-box;
+    background-position: bottom;
+    background-size: contain;
+    padding-bottom: 180px;
+}
+
+.parag > p {
+    color: gray;
+    font-size: 20px;
+}
+
+.btn-custom{
+    background-color: var(--dred);
+    height: 45px;
+    width: 200px;
+    border-radius: 0px;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    align-self: flex-end;
+    margin-top: 150px;
+    box-shadow: none;
+    transition: 0.4s;
+}
+
+.btn-custom > p{
+    font-weight: 500;
+}
+
+.btn-custom:hover{
+    transform: scale(1.2);
+    box-shadow: 5px 5px 10px var(--rose);
+    background-color: var(--wh);
+    border: 2px solid var(--dred);
+}
+
+.btn-custom:focus{
+    box-shadow: none;
+}
+
+/* End Paragrafi + button */
+
+/* Timeline */
+.timeline-line{
+    border-left: 4px solid var(--dred);
+}
+
+.timeline-marker{
+    position: relative;
+}
+
+.timeline-marker::before{
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--dred);
+    background-color: white;
+    border-radius: 50%;
+    top: -0px;
+    left: -24px;
+}
+
+.bg-gr-trees{
+    background:url(./media/single.png), transparent;
+    background-repeat: no-repeat;
+    background-origin:  padding-box;
+    background-position: bottom;
+}
+
+@media screen and (min-width: 992px) {
+    .bg-gr-trees{
+        background-position: bottom right;
+    }
+}
+/* End Timeline */
+
+/* Cards con social */
+.team-card{
+    background: transparent;
+    border: none;
+}
+.team-card p {
+    font-style: italic;
+}
+
+.img-card-custom{
+    border: 4px solid var(--dred);
+    border-radius: 50%;
+    padding: 5px;
+    max-width: 50%;
+    align-self: center;
+}
+
+.fa-brands{
+    transition: 0.4s;
+}
+
+.fa-brands:hover{
+    transform: scale(1.5);
+}
+/* End cards con social */
+
+/* Paragrafi benefit */
+.bg-gr-trees-red{
+    background:url(./media/other.png), var(--wh);
+    background-repeat: no-repeat;
+    background-origin:  border-box;
+    background-position: bottom;
+    background-size: contain;
+    padding-bottom: 500px;
+}
+
+.img-round{
+    border: 4px solid var(--dred);
+    border-radius: 50%;
+    padding: 5px;
+    height: 300px;
+    width: 300px;
+    transition: 0.4s;
+    opacity: 0;
+    align-self: center;
+}
+/* End Paragrafi benefit */
+
